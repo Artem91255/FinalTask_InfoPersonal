@@ -54,10 +54,10 @@ public static void start(){
             String delimiter = " ";
             dataArr = data.split(delimiter);
             if(dataArr.length<6){
-                System.out.println("Ошибка! Вы ввели недостаточно информации. Повторите ввод");
+                throw new RuntimeException("Ошибка! Вы ввели недостаточно информации. Повторите ввод");
             }
             else if(dataArr.length>6){
-                System.out.println("Ошибка! Вы ввели слишком много информации. Повторите ввод");
+                throw new RuntimeException("Ошибка! Вы ввели слишком много информации. Повторите ввод");
             }
            else isExit = true;
 
@@ -131,7 +131,7 @@ public static void start(){
                         }
                     }
                 } catch (Exception e) {
-
+                    System.out.println(e.getMessage());
                 }
             }
             if(b==-1) {
